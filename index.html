@@ -7,7 +7,16 @@
 
 <script>
 	const input = document.getElementById("search"), button = document.getElementById("searcher"), list = document.getElementById("articles");
-	const availableArticles = [["definition/meaning of joe mama: outdated, early comedy", "articles/terminology/define-joe-mama.html"]];
+	const availableArticles = [
+		[
+			"definition/meaning of joe mama: outdated, early comedy",
+			"articles/terminology/define-joe-mama.html"
+		],
+		[
+			"linguistic definition/meaning of time: an advanced, complex concept",
+			"articles/terminology/define-time.html"
+		]
+	];
 	function searchForArticle() {
 		list.innerHTML = "";
 		const inp = input.value.trim().toLowerCase();
