@@ -1,0 +1,32 @@
+<center>
+	This project is dedicated to storing essential knowledge, similar to existing projects like the <a href="https://wikipedia.org">Wikipedia</a>.<br>
+	Search an article here: <input id="search" type="text"> <button id="searcher">Search!</button>
+</center>
+<hr>
+<center id="articles"></center>
+
+<script>
+	const input = document.getElementById("search"), button = document.getElementById("searcher"), list = document.getElementById("articles");
+	const availableArticles = [["definition/meaning of joe mama: outdated, early comedy", "articles/terminology/define-joe-mama.html"]];
+	function searchForArticle() {
+		list.innerHTML = "";
+		const inp = input.value.trim().toLowerCase();
+		for (const article of availableArticles) {
+			if (article[0].includes(inp)) {
+				const link = document.createElement("a");
+				link.href = article[1];
+				link.textContent = article[0] + " | ";
+				link.style = "cursor: text; color: black; text-decorations: none; font-family: \"Sans Serif\" sans-serif";
+				list.appendChild(link);
+			}
+		}
+	}
+	input.onkeydown = function(event) {
+		if (event.keyCode === 13) {
+			searchForArticle();
+		}
+	}
+	button.onclick = function() {
+		searchForArticle();
+	}
+</script>
