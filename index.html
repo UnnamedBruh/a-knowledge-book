@@ -15,17 +15,21 @@
 		[
 			"linguistic definition/meaning of time: an advanced, complex concept",
 			"articles/terminology/define-time.html"
+		],
+		[
+			"National Minimum Drinking Age Act of 1984",
+			"articles/laws/national-minimum-drinking-age-act.html"
 		]
 	];
 	function searchForArticle() {
 		list.innerHTML = "";
 		const inp = input.value.trim().toLowerCase();
 		for (const article of availableArticles) {
-			if (article[0].includes(inp)) {
+			if (article[0].toLowerCase().includes(inp)) {
 				const link = document.createElement("a");
 				link.href = article[1];
 				link.textContent = article[0] + " | ";
-				link.style = "cursor: text; color: black; text-decorations: none; font-family: \"Sans Serif\" sans-serif";
+				link.style = "cursor: text; color: black; text-decoration: none; font-family: \"Sans Serif\" sans-serif";
 				list.appendChild(link);
 			}
 		}
