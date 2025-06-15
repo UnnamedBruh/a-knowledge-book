@@ -3,6 +3,7 @@
 	Search an article here: <input id="search" type="text"> <button id="searcher">Search!</button>
 </center>
 <hr>
+<center>Click an article below to view it.</center><br>
 <center id="articles"></center>
 
 <script>
@@ -14,12 +15,12 @@
 			"definition of joe mama"
 		],
 		[
-			"linguistic definition/meaning of time: an advanced, complex concept",
+			"linguistic definition/meaning of time: an advanced, complex concept philosophical",
 			"articles/terminology/define-time.html",
 			"definition of time"
 		],
 		[
-			"national minimum drinking age act of 1984 law possessing any beverage only if above 21 years",
+			"national minimum drinking age act of 1984 law possessing any beverage only if person is above 21 years",
 			"articles/laws/national-minimum-drinking-age-act.html",
 			"National Minimum Drinking Age Act of 1984"
 		],
@@ -29,7 +30,7 @@
 			"definition of opinion"
 		],
 		[
-			"mp3, or mpeg-1/mpeg-2 layer iii 3 lossy audio format, encoded with psychoacoustic models and serving/being used for encoding audio",
+			"mp3 mpeg-1 mpeg-2 layer iii 3 lossy audio format, encoded with psychoacoustic models designed to encode audio encoding",
 			"articles/digital-formats/mp3.html",
 			"the MP3 audio format"
 		],
@@ -38,7 +39,7 @@
 			"articles/algorithms/base64.html",
 			"Base64"
 		]
-	].sort((x, y) => x[2] > y[2]);
+	];
 	function searchForArticle() {
 		list.innerHTML = "";
 		const inp = input.value.trim().toLowerCase().split(" ");
@@ -60,7 +61,7 @@
 		}
 	}
 	input.onkeydown = function(event) {
-		if (event.keyCode === 13) {
+		if (event.keyCode === 13) { // Enter key (deprecated as of now)
 			searchForArticle();
 		}
 	}
