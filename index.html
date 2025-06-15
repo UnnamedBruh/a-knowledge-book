@@ -32,13 +32,25 @@
 			"mp3, or mpeg-1/mpeg-2 layer iii 3 lossy audio format, encoded with psychoacoustic models and serving/being used for encoding audio",
 			"articles/digital-formats/mp3.html",
 			"the MP3 audio format"
+		],
+		[
+			"base64, an encoding scheme/algorithm used/meant for safely storing binary data in text/ascii-only environments",
+			"articles/algorithms/base64.html",
+			"Base64"
 		]
-	];
+	].sort((x, y) => x[2] > y[2]);
 	function searchForArticle() {
 		list.innerHTML = "";
-		const inp = input.value.trim().toLowerCase();
+		const inp = input.value.trim().toLowerCase().split(" ");
 		for (const article of availableArticles) {
-			if (article[0].includes(inp)) {
+			let bool = true;
+			for (const key of inp) {
+				if (!article[0].includes(key)) {
+					bool = false;
+					break;
+				}
+			}
+			if (bool) {
 				const link = document.createElement("a");
 				link.href = article[1];
 				link.textContent = article[2] + " | ";
